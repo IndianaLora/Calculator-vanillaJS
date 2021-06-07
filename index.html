@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calc-body">
+        <div class="calc-screen">
+          <div class="calc-operation">0</div>
+          <div class="calc-typed" onchange="showInput()" id='firstInput'><span class="blink-me">_</span></div>
+        </div>
+        <div class="calc-button-row">
+          <div class="button c" onclick="getValue(event.target)">C</div>
+          <div class="button l" onclick="getValue(event.target)">≠</div>
+          <div class="button l" onclick="getValue(event.target)">%</div>
+          <div class="button l" onclick="getValue(event.target)">/</div>
+        </div>
+        <div class="calc-button-row">
+          <div class="button" onclick="getValue(event.target)">7</div>
+          <div class="button" onclick="getValue(event.target)">8</div>
+          <div class="button" onclick="getValue(event.target)">9</div>
+          <div class="button l" onclick="getValue(event.target)">x</div>
+        </div>
+        <div class="calc-button-row">
+          <div class="button" onclick="getValue(event.target)">4</div>
+          <div class="button" onclick="getValue(event.target)">5</div>
+          <div class="button"onclick="getValue(event.target)">6</div>
+          <div class="button l"onclick="getValue(event.target)">−</div>
+        </div>
+        <div class="calc-button-row">
+          <div class="button"onclick="getValue(event.target)">1</div>
+          <div class="button"onclick="getValue(event.target)">2</div>
+          <div class="button"onclick="getValue(event.target)">3</div>
+          <div class="button l"onclick="getValue(event.target)">+</div>
+        </div>
+        <div class="calc-button-row">
+          <div class="button"onclick="getValue(event.target)">.</div>
+          <div class="button" onclick="getValue(event.target)">0</div>
+          <div class="button" onclick="getValue(event.target)"><</div>
+          <div class="button l" onclick="getValue(event.target)">=</div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
