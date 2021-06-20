@@ -13,7 +13,7 @@
       <div class="calc-body">
         <div class="calc-screen">
           <div class="calc-operation">0</div>
-          <div class="calc-typed" onchange="showInput()" id='firstInput'><span class="blink-me">_</span></div>
+          <div class="calc-typed" onchange="showInput()" id='firstInput'><span class="blink-me"></span></div>
         </div>
         <div class="calc-button-row">
           <div class="button c" onclick="getValue(event.target)">C</div>
@@ -43,7 +43,7 @@
           <div class="button"onclick="getValue(event.target)">.</div>
           <div class="button" onclick="getValue(event.target)">0</div>
           <div class="button" onclick="getValue(event.target)"><</div>
-          <div class="button l" onclick="getValue(event.target)">=</div>
+          <div class="button l" id='equal'>=</div>
         </div>
       </div>
     </div>

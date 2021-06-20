@@ -1,10 +1,16 @@
-var operation = [];
+var operation;
+var input = document.getElementById("firstInput");
+var equal = document.getElementById("equal");
+
 function getValue(event) {
   var value = event;
   value = value.innerText;
-  operation.push(parseInt(value));
-  console.log(operation);
-  var firstInput = document.getElementById("firstInput");
-  firstInput.innerHTML = operation;
+  input.value = input.append(value);
+
+  equal.addEventListener("click", () => {
+    operation = input.innerText;
+    var eval = operation;
+    console.log(eval);
+  });
 }
 function showInput() {}
