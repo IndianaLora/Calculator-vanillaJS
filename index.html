@@ -13,11 +13,11 @@
       <div class="calc-body">
         <div class="calc-screen">
           <div class="calc-operation" id='prevOp'></div>
-          <div class="calc-typed" onchange="showInput()" id='firstInput'><span class="blink-me"></span></div>
+          <div class="calc-typed"  id='firstInput'><span class="blink-me"></span></div>
         </div>
         <div class="calc-button-row">
           <div class="button c" id='erase'>C</div>
-          <div class="button c" id='eraseOneDigit'>DE</div>
+          <div class="button c" id='eraseOneDigit'>DEL</div>
           <div class="button l" onclick="getValue(event.target)">%</div>
           <div class="button l" onclick="getValue(event.target)">/</div>
         </div>
@@ -42,8 +42,8 @@
         <div class="calc-button-row">
           <div class="button"onclick="getValue(event.target)">.</div>
           <div class="button" onclick="getValue(event.target)">0</div>
-          <div class="button" onclick="getValue(event.target)"><</div>
-          <div class="button l" id='equal'>=</div>
+          
+          <div class="button btn-large" id='equal'>=</div>
         </div>
       </div>
     </div>

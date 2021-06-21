@@ -1,6 +1,6 @@
 var operation = [];
-var eraseOneDigit = document.getElementById("eraseOneDigit");
 var eraseOne = [];
+var eraseOneDigit = document.getElementById("eraseOneDigit");
 
 var input = document.getElementById("firstInput");
 var prevOp = document.getElementById("prevOp");
@@ -26,6 +26,9 @@ eraseOneDigit.addEventListener("click", () => {
 });
 prevOp.addEventListener("", () => {
   //make that i doesnt that more than operation per time
+  //if includes in the 3rd position
+  //add event to --<-- button
+  //
 });
 //Calculations
 equal.addEventListener("click", () => {
@@ -36,10 +39,7 @@ equal.addEventListener("click", () => {
   if (includesSubstraction) {
     var firstValue = lastOp.split("-")[0];
     var secondValue = lastOp.split("-")[1];
-  } else if ((secondValue = Symbol)) {
-    input.innerHTML = "invalid";
-  } else {
-    var result = parseFloat(firstValue) + parseFloat(secondValue);
+    var result = parseFloat(firstValue) - parseFloat(secondValue);
     input.innerHTML = result;
     prevOp.innerHTML = result;
   }
@@ -48,9 +48,6 @@ equal.addEventListener("click", () => {
   if (includesSum) {
     var firstValue = lastOp.split("+")[0];
     var secondValue = lastOp.split("+")[1];
-  } else if ((secondValue = Symbol)) {
-    input.innerHTML = "invalid";
-  } else {
     var result = parseFloat(firstValue) + parseFloat(secondValue);
     input.innerHTML = result;
     prevOp.innerHTML = result;
@@ -60,26 +57,40 @@ equal.addEventListener("click", () => {
   if (includesSum) {
     var firstValue = lastOp.split("/")[0];
     var secondValue = lastOp.split("/")[1];
-    if (secondValue == "0") {
-      input.innerHTML = "Cant divide by zero";
-    } else if ((secondValue = Symbol)) {
-      input.innerHTML = "invalid";
-    } else {
-      var result = parseFloat(firstValue) / parseFloat(secondValue);
-      input.innerHTML = result;
-      prevOp.innerHTML = result;
-    }
+    var result = parseFloat(firstValue) / parseFloat(secondValue);
+    input.innerHTML = result;
+    prevOp.innerHTML = result;
   }
   //*
   var includesSum = lastOp.includes("*");
   if (includesSum) {
     var firstValue = lastOp.split("*")[0];
     var secondValue = lastOp.split("*")[1];
-  } else if ((secondValue = Symbol)) {
-    input.innerHTML = "invalid";
-  } else {
     var result = parseFloat(firstValue) * parseFloat(secondValue);
     input.innerHTML = result;
     prevOp.innerHTML = result;
+  }
+  var includesSum = lastOp.includes("%");
+  if (includesSum) {
+    var firstValue = lastOp.split("%")[0];
+    var secondValue = lastOp.split("%")[1];
+    var result = parseFloat(firstValue) % parseFloat(secondValue);
+    input.innerHTML = result;
+    prevOp.innerHTML = result;
+  }
+  if (isNaN(prevOp.innerHTML)) {
+    prevOp.innerHTML = "Invalid";
+    input.innerHTML = "Invalid";
+    setTimeout(() => {
+      input.innerHTML = "";
+      prevOp.innerHTML = "";
+    }, 1000);
+  }
+  if (result == "Infinity") {
+    input.innerHTML = "Cant divid by zero";
+    prevOp.innerHTML = "Cant divid by zero";
+  }
+  if (input.innerHTML == "" || prevOp.innerHTML == "") {
+    //do something
   }
 });
