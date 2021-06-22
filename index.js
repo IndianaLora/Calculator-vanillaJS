@@ -25,6 +25,7 @@ function getValue(event) {
 erase.addEventListener("click", () => {
   input.innerText = "";
   prevOp.innerText = "";
+  operation = [];
 });
 eraseOneDigit.addEventListener("click", () => {
   eraseOne = prevOp.innerText;
@@ -60,7 +61,7 @@ function equalTo() {
   function substraction() {
     firstValue = lastOp.split("-")[0];
     secondValue = lastOp.split("-")[1];
-    result = parseFloat(firstValue) - parseFloat(secondValue);
+    result = parseInt(firstValue) - parseInt(secondValue);
     input.innerHTML = result;
     prevOp.innerHTML = result;
   }
