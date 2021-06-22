@@ -1,7 +1,6 @@
 var operation = [];
-var isOperation = false;
 var eraseOne = [];
-var a = [];
+var isOperation = false;
 var eraseOneDigit = document.getElementById("eraseOneDigit");
 
 var firstValue;
