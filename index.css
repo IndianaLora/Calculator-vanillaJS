@@ -86,3 +86,7 @@
   .blink-me {
     color: #E0B612;
   }
+ .disabled {
+    opacity: 0.65; 
+    cursor: not-allowed;
+  }

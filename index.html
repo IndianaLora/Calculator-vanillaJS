@@ -12,38 +12,47 @@
     <div class="container">
       <div class="calc-body">
         <div class="calc-screen">
-          <div class="calc-operation" id='prevOp'></div>
-          <div class="calc-typed"  id='firstInput'><span class="blink-me"></span></div>
+          <div class="calc-operation" id="prevOp"></div>
+          <div class="calc-typed" id="firstInput">
+            <span class="blink-me"></span>
+          </div>
         </div>
         <div class="calc-button-row">
-          <div class="button c" id='erase'>C</div>
-          <div class="button c" id='eraseOneDigit'>DEL</div>
-          <div class="button l" onclick="getValue(event.target)">%</div>
-          <div class="button l" onclick="getValue(event.target)">/</div>
+          <div class="button c" id="erase">C</div>
+          <div class="button c" id="eraseOneDigit">DEL</div>
+          <div class="button l op" onclick="getValue(event.target)">%</div>
+          <div class="button l op" onclick="getValue(event.target)">/</div>
         </div>
         <div class="calc-button-row">
           <div class="button" onclick="getValue(event.target)">7</div>
           <div class="button" onclick="getValue(event.target)">8</div>
           <div class="button" onclick="getValue(event.target)">9</div>
-          <div class="button l" onclick="getValue(event.target)">*</div>
+          <div class="button l op" onclick="getValue(event.target)" id="mul">
+            *
+          </div>
         </div>
         <div class="calc-button-row">
           <div class="button" onclick="getValue(event.target)">4</div>
           <div class="button" onclick="getValue(event.target)">5</div>
-          <div class="button"onclick="getValue(event.target)">6</div>
-          <div class="button l"onclick="getValue(event.target)">-</div>
+          <div class="button" onclick="getValue(event.target)">6</div>
+          <div class="button l op" onclick="getValue(event.target)" id="sub">
+            -
+          </div>
         </div>
         <div class="calc-button-row">
-          <div class="button"onclick="getValue(event.target)">1</div>
-          <div class="button"onclick="getValue(event.target)">2</div>
-          <div class="button"onclick="getValue(event.target)">3</div>
-          <div class="button l"onclick="getValue(event.target)">+</div>
+          <div class="button" onclick="getValue(event.target)">1</div>
+          <div class="button" onclick="getValue(event.target)">2</div>
+          <div class="button" onclick="getValue(event.target)">3</div>
+          <div class="button l op" onclick="getValue(event.target)" id="sum">
+            +
+          </div>
         </div>
         <div class="calc-button-row">
-          <div class="button"onclick="getValue(event.target)">.</div>
+          <div class="button" onclick="getValue(event.target)">.</div>
           <div class="button" onclick="getValue(event.target)">0</div>
-          
-          <div class="button btn-large" id='equal'>=</div>
+          <div class="button op" onclick="getValue(event.target)">^</div>
+
+          <div class="button btn-large" id="equal">=</div>
         </div>
       </div>
     </div>
