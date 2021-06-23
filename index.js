@@ -29,12 +29,16 @@ erase.addEventListener("click", () => {
 eraseOneDigit.addEventListener("click", () => {
   eraseOne = prevOp.innerText;
   eraseOne = eraseOne.toString().slice(0, -1);
+  eraseOne.toString().slice(0, -1);
+  isOperation = true
+    ? !isOperation
+    : (isOperation = false ? !isOperation : isOperation);
   prevOp.innerHTML = eraseOne;
 });
 
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
-    console.log(operator.innerText);
+    // console.log(operator.innerText);
     isOperation = true ? !isOperation : isOperation;
     console.log(isOperation);
     if (isOperation == false && operation.length > 2) {
@@ -42,7 +46,6 @@ operators.forEach((operator) => {
       var position = operation.length - 1;
       var lastOp = operation[position];
       equalTo(lastOp);
-      console.log(lastOp);
     }
   });
 });
