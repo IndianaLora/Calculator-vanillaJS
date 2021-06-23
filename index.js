@@ -34,6 +34,7 @@ eraseOneDigit.addEventListener("click", () => {
 
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
+    console.log(operator.innerText);
     isOperation = true ? !isOperation : isOperation;
     console.log(isOperation);
     if (isOperation == false && operation.length > 2) {
@@ -45,11 +46,18 @@ operators.forEach((operator) => {
     }
   });
 });
-equal.addEventListener("click", equalTo);
+equal.addEventListener("click", () => {
+  var position = operation.length - 1;
+  var lastOp = operation[position];
+  equalTo(lastOp);
+});
 
 function equalTo(lastOp) {
-  //-
+  isOperation = false;
   var includesSubs = lastOp.includes("-");
+
+  //-
+
   if (includesSubs) {
     substraction();
   }
@@ -133,12 +141,23 @@ function equalTo(lastOp) {
   }
   nan();
   infinity();
+  zero();
 }
 
 function nan() {
   if (isNaN(prevOp.innerHTML)) {
     prevOp.innerHTML = "Invalid";
     input.innerHTML = "Invalid";
+    setTimeout(() => {
+      input.innerHTML = "";
+      prevOp.innerHTML = "";
+    }, 1000);
+  }
+}
+function zero() {
+  if (prevOp.innerHTML == 0) {
+    prevOp.innerHTML = " ";
+    operation = [];
     setTimeout(() => {
       input.innerHTML = "";
       prevOp.innerHTML = "";
