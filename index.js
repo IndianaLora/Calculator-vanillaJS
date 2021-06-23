@@ -24,6 +24,9 @@ function getValue(event) {
 erase.addEventListener("click", () => {
   input.innerText = "";
   prevOp.innerText = "";
+    isOperation = true
+    ? !isOperation
+    : (isOperation = false ? !isOperation : isOperation);
   operation = [];
 });
 eraseOneDigit.addEventListener("click", () => {
