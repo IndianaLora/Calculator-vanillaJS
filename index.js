@@ -35,22 +35,19 @@ eraseOneDigit.addEventListener("click", () => {
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
     isOperation = true ? !isOperation : isOperation;
-    if (isOperation == true && operation.length > 1) {
+    console.log(isOperation);
+    if (isOperation == false && operation.length > 2) {
       operation.pop();
       var position = operation.length - 1;
       var lastOp = operation[position];
+      equalTo(lastOp);
       console.log(lastOp);
-      prevOp.innerText = lastOp;
-      equalTo();
     }
   });
 });
 equal.addEventListener("click", equalTo);
 
-function equalTo() {
-  var position = operation.length - 1;
-  var lastOp = operation[position];
-
+function equalTo(lastOp) {
   //-
   var includesSubs = lastOp.includes("-");
   if (includesSubs) {
