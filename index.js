@@ -26,7 +26,7 @@ function getValue(event) {
 }
 function getPoint(event) {
   console.log(executedPeriod);
-  if (prevOp.innerText != "" && executedPeriod == false) {
+  if (prevOp.innerText != "" && executedPeriod == false ) {
     executedPeriod = true;
     var value = event;
     value = value.innerText;
@@ -170,6 +170,8 @@ function nan() {
     setTimeout(() => {
       input.innerHTML = "";
       prevOp.innerHTML = "";
+      isOperation = "";
+      executedPeriod = "";
     }, 1000);
   }
 }
@@ -180,6 +182,8 @@ function zero() {
     setTimeout(() => {
       input.innerHTML = "";
       prevOp.innerHTML = "";
+      isOperation = "";
+      executedPeriod = "";
     }, 1000);
   }
 }
@@ -190,6 +194,8 @@ function infinity() {
     setTimeout(() => {
       input.innerHTML = "";
       prevOp.innerHTML = "";
+      isOperation = "";
+      executedPeriod = "";
     }, 1000);
   }
 }
