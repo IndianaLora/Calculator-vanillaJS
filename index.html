@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="container">
+      <h1>Negative numbers not allowed</h1>
       <div class="calc-body">
         <div class="calc-screen">
           <div class="calc-operation" id="prevOp"></div>
@@ -35,9 +36,7 @@
           <div class="button" onclick="getValue(event.target)">4</div>
           <div class="button" onclick="getValue(event.target)">5</div>
           <div class="button" onclick="getValue(event.target)">6</div>
-          <div class="button l op" onclick="getValue(event.target)" >
-            -
-          </div>
+          <div class="button l op" onclick="getValue(event.target)">-</div>
         </div>
         <div class="calc-button-row">
           <div class="button" onclick="getValue(event.target)">1</div>
@@ -48,9 +47,11 @@
           </div>
         </div>
         <div class="calc-button-row">
-          <div class="button" onclick="getValue(event.target)">.</div>
+          <div class="button" onclick="getPoint(event.target)" id="period">
+            .
+          </div>
           <div class="button" onclick="getValue(event.target)">0</div>
-          <div class="button op" onclick="getValue(event.target)" >^</div>
+          <div class="button op" onclick="getValue(event.target)">^</div>
 
           <div class="button btn-large" id="equal">=</div>
         </div>

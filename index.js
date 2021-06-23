@@ -1,6 +1,8 @@
 var operation = [];
 var eraseOne = [];
 var isOperation = false;
+var executed = false;
+var executedPeriod = false;
 var eraseOneDigit = document.getElementById("eraseOneDigit");
 
 var firstValue;
@@ -11,6 +13,7 @@ var input = document.getElementById("firstInput");
 var prevOp = document.getElementById("prevOp");
 var equal = document.getElementById("equal");
 var erase = document.getElementById("erase");
+var period = document.getElementById("period");
 
 var operators = document.querySelectorAll(".op");
 
@@ -21,24 +24,37 @@ function getValue(event) {
   value = prevOp.innerText;
   operation.push(value);
 }
+function getPoint(event) {
+  console.log(executedPeriod);
+  if (prevOp.innerText != "" && executedPeriod == false) {
+    executedPeriod = true;
+    var value = event;
+    value = value.innerText;
+    value = prevOp.append(value);
+    value = prevOp.innerText;
+    operation.push(value);
+  }
+}
 erase.addEventListener("click", () => {
   input.innerText = "";
   prevOp.innerText = "";
+  isOperation = "";
+  executedPeriod = "";
   operation = [];
 });
 eraseOneDigit.addEventListener("click", () => {
   eraseOne = prevOp.innerText;
   eraseOne = eraseOne.toString().slice(0, -1);
   eraseOne.toString().slice(0, -1);
-  isOperation = true
-    ? !isOperation
-    : (isOperation = false ? !isOperation : isOperation);
+  isOperation = "";
+  executedPeriod = "";
   prevOp.innerHTML = eraseOne;
 });
 
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
     // console.log(operator.innerText);
+    executedPeriod = false;
     isOperation = true ? !isOperation : isOperation;
     console.log(isOperation);
     if (isOperation == false && operation.length > 2) {
