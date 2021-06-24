@@ -26,7 +26,7 @@ function getValue(event) {
 }
 function getPoint(event) {
   console.log(executedPeriod);
-  var includePeriod = prevOp.innerText.includes(".");
+ 
   if (prevOp.innerText != "" && executedPeriod == false) {
     executedPeriod = true;
     var value = event;
