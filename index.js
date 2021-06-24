@@ -26,7 +26,8 @@ function getValue(event) {
 }
 function getPoint(event) {
   console.log(executedPeriod);
-  if (prevOp.innerText != "" && executedPeriod == false ) {
+  var includePeriod = prevOp.innerText.includes(".");
+  if (prevOp.innerText != "" && executedPeriod == false) {
     executedPeriod = true;
     var value = event;
     value = value.innerText;
@@ -54,9 +55,13 @@ eraseOneDigit.addEventListener("click", () => {
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
     // console.log(operator.innerText);
+    if (operation.length == 1) {
+      isOperation = ' ';
+    }
     executedPeriod = false;
     isOperation = true ? !isOperation : isOperation;
     console.log(isOperation);
+    console.log(operation.length);
     if (isOperation == false && operation.length > 2) {
       operation.pop();
       var position = operation.length - 1;
